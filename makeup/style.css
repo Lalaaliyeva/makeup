@@ -1,0 +1,498 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Playfair Display',
+  serif;
+}
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* nav-bar*/
+
+#nav-bar{
+  
+    height:auto;
+    width:100%;
+    position: fixed;
+    z-index: 100;
+}
+
+.nav-bar{
+    background: rgba(2, 2, 2, 0);
+    left: 0;
+    top: 0;
+    padding: 1rem 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ .nav-bar .brand a{
+text-decoration: none;
+font-size: 2.5rem;
+color: rgba(255, 255, 255, 0.753);
+ text-shadow: 2px 3px 16px rgba(255, 255, 255, 0.877);
+}
+
+.nav-bar .nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.nav-bar .nav-list .hamburger{
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    transition: .3s ease transform;
+}
+.nav-bar .nav-list .hamburger .bar{
+    height: 2px;
+    width: 30px;
+    background-color: white;
+    position: relative;
+    display: flex;
+}
+
+.nav-bar .nav-list .hamburger .bar::before,
+.nav-bar .nav-list .hamburger .bar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+    transition: .3s ease all;
+}
+.nav-bar .nav-list .hamburger .bar::before {
+    top:8px;
+}
+.nav-bar .nav-list .hamburger .bar::after {
+    bottom: 8px;
+}  
+
+.nav-bar .nav-list ul{
+    position: absolute;
+    width: 100%;
+    top:0px;
+    left: 0;
+    background-color: rgb(3, 56, 70);
+    padding: 5rem 0;
+    transform: translateY(-100%); 
+    transition: .3s ease transform;
+    text-align: center;
+}
+
+.nav-bar .nav-list ul li{
+    list-style: none;
+    display: block;
+    position: relative;
+}
+
+.nav-bar .nav-list ul li:hover:after {
+    transform: translateX(-50%) scale(1);
+}
+.nav-bar .nav-list ul li::after {
+    content: '';
+    position: absolute;
+    width: 9rem;
+    height: .2rem;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    bottom:0;
+    transition: .3s ease transform;
+}
+
+.nav-bar .nav-list ul li a{
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.904);
+    display: block;
+    letter-spacing: .15rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 1.5rem 0;
+        font-weight: bold;
+
+}
+
+.nav-bar .nav-list.open ul{
+    transform: translateY(90px);
+}
+
+.makeup{
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 50px;
+    justify-content: center;
+    background-image: url(./img/blackbrushes.jpg);
+    background-size: cover;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.makeup .makeup-info{
+    width: 100%;
+    text-align: center;
+}
+
+.makeup .makeup-info .makeup-info-heading{
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgb(2, 2, 2);
+}
+.makeup .makeup-info .makeup-info-subheading{
+font-size: 1.8rem;
+text-transform: uppercase;
+letter-spacing: .5rem;
+font-weight: 500;
+color: rgb(2, 2, 2);
+}
+
+.makeup .makeup-info .makeup-info-button{
+    margin-top: 30px;
+    padding:1.5rem 3.5rem;
+    display: inline-block;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: rgb(2, 2, 2);
+    text-decoration: none;
+    letter-spacing: .3rem;
+    background-color: rgba(80, 70, 70, 0.329);
+ 
+ font-family: 'Hind',
+ sans-serif;
+ font-family: 'Rubik',
+ sans-serif;
+ font-weight: 700;
+ font-style: italic;
+}
+
+/* about section */
+.about{
+    width: 100%;
+    min-width: 50vh;
+    padding:10rem 5rem;
+    flex-direction: column;
+}
+
+.about .about-info{
+    text-align: center;
+
+}
+
+.about .about-info .about-info-heading{
+    font-size: 4.3rem;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    color: black;
+     font-weight: 900; 
+}
+
+.about .about-info .about-info-desc{
+    font-size: 1.4rem;
+    line-height: 2rem;
+    letter-spacing: .1rem;
+    margin-top: 10px;
+    font-family: sans-serif;
+}
+
+.about .about-info .about-info-button{
+    padding: 1rem 2rem;
+    display: inline-block;
+    background-color:rgba(80, 70, 70, 0.329);
+    border-radius: 2.6rem;
+    color: rgba(255, 250, 250, 0.966);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.about .about-img .about-img-wrapper{
+    margin-top: 50px;
+    height: auto;
+    max-width: 400px;
+     position: relative;
+   display: inline-block;
+  }
+.about .about-img .about-img-wrapper img{
+    height:100%;
+    width: 100%;
+}
+  .about .about-img .about-img-wrapper::after {
+      position: absolute;
+      content: '';
+      right: -3rem;
+      top:50%;
+      transform: translateY(-50%);
+     width: 90%;
+     height: 120%;
+     background-color: rgba(29, 43, 44, 0.205);
+     z-index:-1;
+    }
+
+    .products{
+        flex-direction: column;
+        min-height: 60vh;
+        padding: 9rem 4rem;
+    }
+
+    .products .products-header{
+        width: 100%;
+        text-align: center;
+        
+    }
+    .products .products-header .products-header-heading{
+        font-size: 4.3rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: black;
+    }
+
+    .products .products-header .products-header-desc{
+        font-size: 1.3rem;
+        line-height: 2rem;
+        margin-top: 20px;
+        
+    }
+
+    .products .products-info{
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+    }
+    .products .products-info .product{
+        width: 100%;
+        min-height: 300px;
+        position: relative;
+        transition: .3s ease transform;
+        margin:5px;
+    }
+
+    .products .products-info .product .product-card{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transform-style: preserve-3d;
+        transition: .5s linear transform;
+        display: block;
+    }
+
+    .products .products-info .product .product-card .product-front,
+        .products .products-info .product .product-card .product-back{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(213, 214, 211, 0.671);
+            padding: 10px;
+        }
+
+        .products .products-info .product .product-card .product-back{
+            transform: rotateY(180deg);
+        }
+
+        .products .products-info .product .product-card .product-front i{
+            font-size: 4rem;
+            color: black;
+            margin-bottom: 10px;
+
+        }
+
+        .products .products-info .product .product-card .product-front .product-front-heading,
+        .products .products-info .product .product-card .product-back .product-back-heading {
+            font-size: 2.8rem;
+            text-transform: capitalize;
+        }
+
+        .products .products-info .product:hover .product-card{
+            transform: rotateY(180deg);
+        }
+
+        .products .products-info .product .product-card .product-back .product-back-desc{
+            font-size: 1.6rem;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .products .products-info .product:nth-child(1) .product-card .product-front{
+            background-image: url(./img/morebrushes.jpg);
+            background-size: cover;
+            position: relative;
+            color: white;
+        }
+
+        .products .products-info .product:nth-child(1) .product-card .product-front::after {
+           content: '';
+           position: absolute;
+           left: 0;
+           top: 0;
+           height: 100%;
+           width: 100%;
+           background-color: rgba(0, 0,0, 0.274);
+           z-index: -1;
+        }
+
+        .products .products-info .product:nth-child(1) .product-card .product-front i {
+           
+            color: white;
+        }
+
+        .products .products-info .product:nth-child(2) .product-card .product-front {
+            background-image: url(./img/palette.jpg);
+            background-size: cover;
+            position: relative;
+            color: white;
+        }
+
+        .products .products-info .product:nth-child(2) .product-card .product-front::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.274);
+            z-index: -1;
+        }
+
+        .products .products-info .product:nth-child(2) .product-card .product-front i {
+
+            color: white;
+        }
+
+        .products .products-info .product:nth-child(3) .product-card .product-front {
+            background-image: url(./img/lipstick.jpg);
+            background-size: cover;
+            position: relative;
+            color: white;
+        }
+
+        .products .products-info .product:nth-child(3) .product-card .product-front::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.274);
+            z-index: -1;
+        }
+
+        .products .products-info .product:nth-child(3) .product-card .product-front i {
+
+            color: white;
+        }
+
+        .footer{
+            min-height: 20vh;
+            width: 100%;
+            background: black;
+            color: white;
+            flex-direction: column;
+            text-align: center;
+            padding: 5rem;
+        }
+
+        .footer .footer-contact{
+            padding: 20px;
+        }
+
+        .footer .footer-contact .footer-contact-heading{
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+        }
+
+.footer .footer-contact .footer-contact-info{
+    font-size: 1.5rem;
+    padding-top: 8px;
+    letter-spacing: .2rem;
+     font-family:'Gill Sans',
+     'Gill Sans MT',
+     Calibri,
+     'Trebuchet MS',
+     sans-serif
+}
+.footer .footer-social-follow .footer-social-icon a{
+    color: white;
+    font-size: 2.7rem;
+    margin:.4rem;
+    display: inline-block;
+}
+
+.footer .footer-social-follow .footer-social-follow-heading{
+    font-family:'Gill Sans',
+    'Gill Sans MT',
+    Calibri,
+    'Trebuchet MS',
+    sans-serif;
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .makeup{
+        height: 100vh;
+        flex-direction: row;
+        padding-left: 10%;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    .about{
+        width: 80%;
+        margin: 0 auto;
+        flex-direction: row;
+    }
+    .about .about-info{
+        width: 50%;
+        text-align: center;
+        padding-right:17rem ;
+    }
+
+    .products .products-header .products-header-desc{
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .products .products-info{
+        flex-direction: row;
+    }
+
+    .products .products-info .product{
+        margin:0;
+
+    }
+}
